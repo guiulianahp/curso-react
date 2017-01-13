@@ -5,23 +5,23 @@ var webpack = require('webpack');
 module.exports = {
     context: path.join(__dirname),
     devtool: debug ? "inline-sourcemap" : null,
-    entry: "./app/src/js/app.js",
-    // module: {
-    //     loaders: [
-    //         {
-    //             test: /\.jsx?$/,
-    //             exclude: /(node_modules|bower_components)/,
-    //             loader: 'babel-loader',
-    //             query: {
-    //                 presets: ['react', 'es2015', 'stage-0'],
-    //                 plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
-    //             }
-    //         }
-    //     ]
-    // },
+    entry: "./app/dist/index.js",
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'es2015', 'stage-0'],
+                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
+                }
+            }
+        ]
+    },
     output: {
-        path: path.join(__dirname, "/app/dist/js/"),
-        filename: "app.min.js",
+        path: path.join(__dirname, "/app/js/"),
+        filename: "index.min.js",
         publicPath: "/js/"
     },
     plugins: debug ? [] : [
