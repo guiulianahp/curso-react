@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
     context: path.join(__dirname),
     devtool: debug ? "inline-sourcemap" : null,
-    entry: "./app/dist/index.js",
+    entry: "./app/src/index.js",
     module: {
         loaders: [
             {
@@ -20,7 +20,7 @@ module.exports = {
         ]
     },
     output: {
-        path: path.join(__dirname, "/app/js/"),
+        path: path.join(__dirname, "/app/dist/js/"),
         filename: "index.min.js",
         publicPath: "/js/"
     },
