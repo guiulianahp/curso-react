@@ -14,6 +14,7 @@ export default class SearchBar extends React.Component {
                 <input onChange={this.props.onChange} type="text"/>
                 <input type="checkbox"/>
             </div>
+
         )
     }
 }
